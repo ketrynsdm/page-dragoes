@@ -1,27 +1,55 @@
-# PageDragoes
+# Page-Dragoes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
+Criar uma aplicação que contenha:
 
-## Development server
+Página de login:
+Única página disponível se não estiver logado;
+Criar um usuário básico para acesso.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Uma página de lista de dragões:
+Os nomes devem estar em ordem alfabética;
+A partir da lista, deverá ser possível remover e alterar as informações dos dragões.
 
-## Code scaffolding
+Uma página com os detalhes de um dragão específico:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Os seguintes dados devem ser apresentados na página:
+Data de criação;
+Nome;
+Tipo.
 
-## Build
+Uma página para cadastro de dragões:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Regras:
+Layout responsivo;
+Utilizar Stencil, React, Angular 6+ ou Web Components;
+Usar um sistema de controle de versão para entregar o teste (Github, Bitbucket, ...).
 
-## Running unit tests
+O que será avaliado:
+Organização do código;
+Componentização das páginas;
+Interface organizada e amigável;
+Uso adequado do css/sass/less. NÃO é permitido usar bibliotecas de estilos como: bootstrap, material design, etc.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+API
 
-## Running end-to-end tests
+http://5c4b2a47aa8ee500142b4887.mockapi.io/api/v1/dragon
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+GET .../api/v1/dragon
 
-## Further help
+lista de dragões
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+GET .../api/v1/dragon/:id
+
+detalhes de um draão
+
+POST .../api/v1/dragon
+
+criação de um dragão
+
+PUT .../api/v1/dragon/:id
+
+edição de um dragão
+
+DELETE .../api/v1/dragon/:id
+
+deleção de um dragão
