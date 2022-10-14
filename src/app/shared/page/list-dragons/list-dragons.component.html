@@ -1,0 +1,14 @@
+<div class="header">
+    <div class="container">
+        <h1>Lista de Dragões</h1>
+    </div>
+</div>
+<div class="container">
+    <div class="card" *ngFor="let dragons of dragonsResult">
+        <span>Nome: </span>
+        <h4 class="name-cards">{{dragons.name}}</h4>
+        <span>Tipo: </span>
+        <h4 class="type-cards">{{dragons.type}}</h4>
+        <button class="profile"><span>saiba mais</span></button>
+    </div>
+</div>
