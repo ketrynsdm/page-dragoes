@@ -1,14 +1,20 @@
 <div class="header">
-    <div class="container">
+    <div class="dragons"></div>
+</div>
+<div class="container-back">
+    <div class="title">
         <h1>Lista de Dragões</h1>
     </div>
-</div>
-<div class="container">
-    <div class="card" *ngFor="let dragons of dragonsResult">
-        <span>Nome: </span>
-        <h4 class="name-cards">{{dragons.name}}</h4>
-        <span>Tipo: </span>
-        <h4 class="type-cards">{{dragons.type}}</h4>
-        <button class="profile"><span>saiba mais</span></button>
+    <div class="container">
+        <div class="card" *ngFor="let dragons of dragonsResult">
+            <button class="close"><span>X</span></button>
+            <span>Nome: </span>
+            <h4 class="name-cards">{{dragons.name}}</h4>
+            <button class="profile" [routerLink]="['/dragons-details']" [queryParams]="{id: dragons.id}">
+                <span>saiba mais</span>
+            </button>
+            <button class="edit" [routerLink]="['/change-data']"
+                [queryParams]="{id: dragons.id}"><span>editar</span></button>
+        </div>
     </div>
 </div>

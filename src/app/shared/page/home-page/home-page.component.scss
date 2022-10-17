@@ -1,0 +1,59 @@
+.background {
+  background-image: url("../../../../assets/img/dragon-black-test.png");
+  background-size: 600px;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  background-position: center 2vh;
+  @media screen and (max-width: 600px) {
+    background-size: 500px;
+    background-position: center 9vh;
+  }
+  @media screen and (max-width: 500px) {
+    background-size: 450px;
+    background-position: center 13vh;
+  }
+  @media screen and (max-width: 450px) {
+    background-size: 400px;
+    background-position: center 17vh;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to top, (#c52a2a) 5%, (#007cbe) 90%);
+  width: 100%;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to top, #c52a2a 5%, #007cbe 90%);
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  width: 222px;
+  height: 58px;
+  border-radius: 32px;
+  margin-top: 108px;
+  margin: 0 auto;
+  margin-top: 292px;
+  border: none;
+  @media screen and (max-width: 600px) {
+    width: 200px;
+    height: 52px;
+  }
+}
+
+button:hover {
+  // background: linear-gradient(to top, #007cbe 5%, #c52a2a 90%);
+  color: #000000;
+  box-shadow: 0px 9px 21px -3px rgba(132, 140, 163, 0.322);
+}

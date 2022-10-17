@@ -9,6 +9,7 @@ import { DragonsDetailsComponent } from './page/dragons-details/dragons-details.
 import { RegistrationDragonsComponent } from './page/registration-dragons/registration-dragons.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ChangeDataComponent } from './page/change-data/change-data.component';
 
 @NgModule({
   declarations: [
@@ -16,22 +17,24 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HomePageComponent,
     ListDragonsComponent,
     DragonsDetailsComponent,
-    RegistrationDragonsComponent
+    RegistrationDragonsComponent,
+    ChangeDataComponent,
   ],
   imports: [
     CommonModule,
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule,
     RouterModule,
+    ReactiveFormsModule,
   ],
-  exports:[
+  exports: [
     LoginComponent,
     HomePageComponent,
     ListDragonsComponent,
     DragonsDetailsComponent,
-    RegistrationDragonsComponent
+    RegistrationDragonsComponent,
+    ChangeDataComponent,
   ],
 })
-export class SharedModule { }
+export class SharedModule {}

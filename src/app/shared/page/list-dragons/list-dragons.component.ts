@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
+import { DragonsResult } from '../../interface/dragons-result.model';
 
 @Component({
   selector: 'app-list-dragons',
@@ -6,24 +9,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-dragons.component.scss'],
 })
 export class ListDragonsComponent implements OnInit {
-  dragonsResult = [
-    {
-      createdAt: '2022-10-11T06:48:32.190Z',
-      name: 'Toothless 2',
-      type: 'Fire',
-      histories: 'Teste',
-      id: '149',
-    },
-    {
-      createdAt: '2022-10-11T22:36:32.552Z',
-      name: 'Fafnir',
-      type: 'Fire',
-      histories: '',
-      id: '150',
-    },
-  ];
+  private readonly API = environment.API;
 
-  constructor() {}
+  dragonsResult: DragonsResult[] = [];
 
-  ngOnInit(): void {}
+  constructor(private http: HttpClient) {}
+
+  public get() {
+    return this.http.get<DragonsResult[]>(this.API);
+  }
+
+  ngOnInit(): void {
+    this.get().subscribe((res: DragonsResult[]) => {
+      this.dragonsResult = res;
+    });
+  }
 }

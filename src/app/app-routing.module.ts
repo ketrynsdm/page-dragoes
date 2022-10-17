@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ChangeDataComponent } from './shared/page/change-data/change-data.component';
 import { DragonsDetailsComponent } from './shared/page/dragons-details/dragons-details.component';
 import { HomePageComponent } from './shared/page/home-page/home-page.component';
 import { ListDragonsComponent } from './shared/page/list-dragons/list-dragons.component';
@@ -27,10 +28,14 @@ const routes: Routes = [
     path: 'registration-dragons',
     component: RegistrationDragonsComponent,
   },
+  {
+    path: 'change-data',
+    component: ChangeDataComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

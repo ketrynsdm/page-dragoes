@@ -1,0 +1,19 @@
+<div class="header">
+    <div class="dragons"></div>
+</div>
+
+<div class="container-back">
+    <div class="title">
+        <h3>Alterar os Dados</h3>
+    </div>
+    <div class="container">
+        <form [formGroup]="formDragon">
+            <span>Nome:</span>
+            <input type="text" formControlName="name" value={{dragons.name}}>
+            <span>Tipo:</span>
+            <input id="type" type="text" formControlName="type" (change)="salvar()" value={{dragons.type}}>
+            <button type="submit" (click)="salvar()">Salvar</button>
+            <button type="submit">Cancelar</button>
+        </form>
+    </div>
+</div>
