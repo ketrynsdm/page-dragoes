@@ -7,12 +7,12 @@
         <h3>Cadastro de Dragões</h3>
     </div>
     <div class="container">
-        <form>
+        <form [formGroup]="formDragon">
             <span>Nome:
-                <input type="text"></span>
+                <input type="text" formControlName="name"></span>
             <span>Tipo:
-                <input id="type" type="text"></span>
-            <button type="submit">Adicionar</button>
+                <input id="type" type="text" formControlName="type"></span>
+            <button type="submit" (click)="adicionar()">Adicionar</button>
         </form>
     </div>
 </div>

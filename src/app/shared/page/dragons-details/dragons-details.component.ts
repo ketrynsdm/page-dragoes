@@ -12,7 +12,7 @@ import { DragonsResult } from '../../interface/dragons-result.model';
 export class DragonsDetailsComponent implements OnInit {
   private readonly API = environment.API;
 
-  dragonsResult = {
+  dragonsResult: DragonsResult = {
     createdAt: '',
     name: '',
     type: '',
