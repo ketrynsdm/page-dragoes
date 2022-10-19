@@ -22,14 +22,14 @@ export class DragonsDetailsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
-  public get(id: string) {
+  public getDataDragons(id: string) {
     return this.http.get<DragonsResult>(`${this.API}/${id}`);
   }
 
   ngOnInit(): void {
     const allParams = this.route.snapshot.queryParams;
     const dragonId = allParams?.['id'];
-    this.get(dragonId).subscribe((res: DragonsResult) => {
+    this.getDataDragons(dragonId).subscribe((res: DragonsResult) => {
       this.dragonsResult = res;
     });
   }

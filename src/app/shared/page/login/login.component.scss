@@ -36,6 +36,7 @@ input {
   border-right: none;
   outline: 0;
   width: 225px;
+  background-color: #f0f0f5;
 }
 
 input:focus {
@@ -63,11 +64,15 @@ button {
   height: 35px;
   border-radius: 20px;
   margin-top: 10px;
-  // margin-left: 70px;
 }
 
 button:active {
   background-color: #d1d1d1;
+  color: rgba(116, 116, 116, 0.712);
+}
+
+button:disabled {
+  background-color: #a7a7a7a8;
   color: black;
 }
 

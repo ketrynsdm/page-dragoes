@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  formDragons = this.formBuilder.group({
+    login: [null, Validators.required],
+    password: [null, Validators.required]
+  })
+
+  constructor(private formBuilder: FormBuilder, private router: Router,) { }
 
   ngOnInit(): void {
+  }
+
+  login():void {
+    this.router.navigate(['list-dragons']);
   }
 
 }

@@ -1,14 +1,13 @@
 <div class="container">
     <div class="background">
         <div class="card">
-            <div class="card-login">
-                <h3>Login</h3>
-                <input type="text">
-                <h3>Senha</h3>
-                <input type="password">
+            <div class="card-login" [formGroup]="formDragons">
+                <label for="login">Login</label>
+                <input type="text" id="login" formControlName="login">
+                <label for="password">Senha</label>
+                <input type="password" id="password" formControlName="password">
                 <div class="buttons">
-                    <button type="submit">Entrar</button>
-                    <button [routerLink]="['/registration-dragons']" class="registration">Cadastrar</button>
+                    <button type="submit" [disabled]="formDragons.invalid" (click)="login()">Entrar</button>
                 </div>
             </div>
         </div>

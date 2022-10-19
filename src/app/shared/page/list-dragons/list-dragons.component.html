@@ -4,10 +4,11 @@
 <div class="container-back">
     <div class="title">
         <h1>Lista de Dragões</h1>
+        <button [routerLink]="['/registration-dragons']" class="registration">Cadastrar dragão</button>
     </div>
     <div class="container">
         <div class="card" *ngFor="let dragons of dragonsResult">
-            <button class="close"><span>X</span></button>
+            <button class="close" (click)="delete(dragons.id)"><span>X</span></button>
             <span>Nome: </span>
             <h4 class="name-cards">{{dragons.name}}</h4>
             <button class="profile" [routerLink]="['/dragons-details']" [queryParams]="{id: dragons.id}">

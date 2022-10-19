@@ -1,10 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, EventEmitter, Input, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { DragonsResult } from '../../interface/dragons-result.model';
-import { ListDragonsComponent } from '../list-dragons/list-dragons.component';
 
 @Component({
   selector: 'app-registration-dragons',
@@ -23,12 +22,11 @@ export class RegistrationDragonsComponent implements OnInit {
     id: [''],
   });
 
-  public post(body: DragonsResult) {
+  public postDataDragons(body: DragonsResult) {
     return this.http.post<DragonsResult>(`${this.API}`, body);
   }
 
   constructor(
-    private route: ActivatedRoute,
     private router: Router,
     private http: HttpClient,
     private formBuilder: FormBuilder,
@@ -37,7 +35,7 @@ export class RegistrationDragonsComponent implements OnInit {
   ngOnInit(): void {}
 
   adicionar(): void {
-    this.post(this.formDragon.getRawValue()).subscribe((data) => {
+    this.postDataDragons(this.formDragon.getRawValue()).subscribe((data) => {
       this.router.navigate(['list-dragons']);
     });
   }

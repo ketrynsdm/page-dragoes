@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { FormBuilder } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { DragonsResult } from '../../interface/dragons-result.model';
 
@@ -40,24 +40,24 @@ export class ChangeDataComponent implements OnInit {
 
   idDragon: string = '';
 
-  public get(id: string) {
+  public getDataDragons(id: string) {
     return this.http.get<DragonsResult>(`${this.API}/${id}`);
   }
-  public put(id: string, body: DragonsResult) {
+  public putgetDataDragons(id: string, body: DragonsResult) {
     return this.http.put<DragonsResult>(`${this.API}/${id}`, body);
   }
 
   ngOnInit(): void {
     const allParams = this.route.snapshot.queryParams;
     this.idDragon = allParams?.['id'];
-    this.get(allParams?.['id']).subscribe((res: DragonsResult) => {
+    this.getDataDragons(allParams?.['id']).subscribe((res: DragonsResult) => {
       this.formDragon.reset(res);
     });
   }
 
   salvar(): void {
     const { name, type } = this.formDragon.getRawValue();
-    this.put(this.idDragon, this.formDragon.getRawValue()).subscribe((data) => {
+    this.putgetDataDragons(this.idDragon, this.formDragon.getRawValue()).subscribe((data) => {
       this.router.navigate(['list-dragons']);
     });
   }
