@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { DragonsResult } from '../../interface/dragons-result.model';
 
@@ -15,6 +14,8 @@ export class ListDragonsComponent implements OnInit {
   dragonsResult: DragonsResult[] = [];
   idDragon: string = '';
 
+  loading: boolean = false
+
   constructor(private http: HttpClient) {}
 
   public getLisDragons() {
@@ -25,9 +26,16 @@ export class ListDragonsComponent implements OnInit {
   }
   public delete(id: string | null) {
     if(id) {
+      this.loading = true;
       this.deleteDragons(id).subscribe(() => {
         this.getLisDragons().subscribe((res: DragonsResult[]) => {
-          this.dragonsResult = res;
+          this.dragonsResult = res.sort((item1, item2) => {
+            if((item1.name && item2.name) && item1.name < item2.name) {
+              return -1;
+            }
+              return 1;
+          });
+          this.loading = false
         });
       });
     }
@@ -42,11 +50,6 @@ export class ListDragonsComponent implements OnInit {
           return 1;
       });
     });
-    // const allParams = this.route.snapshot.queryParams;
-    // this.idDragon = allParams?.['id'];
-    // this.delete(allParams?.['id']).subscribe((res: DragonsResult[]) => {
-    //   this.dragonsResult = res;;
-    // });
   }
 
 }

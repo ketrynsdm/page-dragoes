@@ -55,14 +55,13 @@ export class ChangeDataComponent implements OnInit {
     });
   }
 
-  salvar(): void {
-    const { name, type } = this.formDragon.getRawValue();
+  save(): void {
     this.putgetDataDragons(this.idDragon, this.formDragon.getRawValue()).subscribe((data) => {
       this.router.navigate(['list-dragons']);
     });
   }
 
-  cancelar(): void {
+  close(): void {
     this.router.navigate(['list-dragons']);
   }
 }

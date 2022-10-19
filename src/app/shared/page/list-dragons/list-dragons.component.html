@@ -5,6 +5,7 @@
     <div class="title">
         <h1>Lista de Dragões</h1>
         <button [routerLink]="['/registration-dragons']" class="registration">Cadastrar dragão</button>
+        <app-loading *ngIf="loading" class="loading"></app-loading>
     </div>
     <div class="container">
         <div class="card" *ngFor="let dragons of dragonsResult">

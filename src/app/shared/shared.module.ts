@@ -10,6 +10,7 @@ import { RegistrationDragonsComponent } from './page/registration-dragons/regist
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChangeDataComponent } from './page/change-data/change-data.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ChangeDataComponent } from './page/change-data/change-data.component';
     DragonsDetailsComponent,
     RegistrationDragonsComponent,
     ChangeDataComponent,
+    LoadingComponent,
   ],
   imports: [
     CommonModule,

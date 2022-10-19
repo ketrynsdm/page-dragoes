@@ -34,7 +34,7 @@ export class RegistrationDragonsComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  adicionar(): void {
+  add(): void {
     this.postDataDragons(this.formDragon.getRawValue()).subscribe((data) => {
       this.router.navigate(['list-dragons']);
     });
